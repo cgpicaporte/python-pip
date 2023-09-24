@@ -15,6 +15,17 @@ def get_list():
         <p>soy un parrafo</p>
     """
 
+@app.get('/categories', response_class=HTMLResponse)
+def get_categorias():
+    categorias = store.get_categories()
+    return """
+        <h1>Hola soy una pagina</h1>
+        <p>soy un parrafo</p>
+            for category in categorias:
+            (category['name'])
+        """
+    
+
 def run():
     store.get_categories()
 
